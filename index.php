@@ -39,12 +39,13 @@
 			echo "<h1>Total rows in the result: ".$total."</h1><br>";
 			echo "<table class=\"table\">";
 			if($total > 0) {
-				echo "<tr><th>User ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Phone</th><th>Birthday</th></tr>";
+				echo "<thread class=\"thead-inverse\"><tr><th>User ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Phone</th><th>Birthday</th></tr></thread>";
+				echo "<tbody>";
 				foreach($result as $row) {
 					echo "<tr><td>".$row['id']."</td><td>".$row['fname']."</td><td>".$row['lname']."</td><td>".$row['email']."</td><td>".$row['phone']."</td><td>".$row['birthday']."</td></tr>";
 				}
 			}
-			echo "</table>";
+			echo "</tbody></table>";
 		}
 	}
 	?>
@@ -68,7 +69,7 @@
 						echo "</div>";
 						echo "<div class=\"form-group\">";        
 							echo "<div class=\"col-sm-offset-2 col-sm-10\">";
-								echo "<button class=\"btn btn-default\" type=\"submit\" name=\"submit\">Connect!</button>";
+								echo "<button class=\"btn btn-primary\" type=\"submit\" name=\"submit\">Connect!</button>";
 							echo "</div>";
 						echo "</div>";
 					echo "</form>";
