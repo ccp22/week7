@@ -23,7 +23,7 @@
 			$pass = 'BxTEeds4U';
 			try{
 				$con = new PDO('mysql:host=sql1.njit.edu;dbname=ccp22',$user,$pass);
-				echo "Connected Successfully!";
+				echo "<h4>Connected Successfully!</h4><br>";
 				return $con;
 			}catch(PDOException $exception) {
 				echo "<h1>Error has been occured!: ".$exception->getMessage()."</h1><br>";
