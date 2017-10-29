@@ -2,9 +2,10 @@
 <head>
 	<title>PDO | Database Result</title>
 	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -37,12 +38,12 @@
 			$result->execute();
 			$total = $result->rowCount();
 			echo "<h1>Total rows in the result: ".$total."</h1><br>";
-			echo "<table class=\"table\">";
+			echo "<table class=\"table table-hover\">";
 			if($total > 0) {
-				echo "<thread class=\"thead-inverse\"><tr><th>User ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Phone</th><th>Birthday</th></tr></thread>";
+				echo "<thead class=\"thead-dark\"><tr><th>User ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Phone</th><th>Birthday</th></tr></thead>";
 				echo "<tbody>";
 				foreach($result as $row) {
-					echo "<tr><td>".$row['id']."</td><td>".$row['fname']."</td><td>".$row['lname']."</td><td>".$row['email']."</td><td>".$row['phone']."</td><td>".$row['birthday']."</td></tr>";
+					echo "<tr><th scope=\"row\">".$row['id']."</th><td>".$row['fname']."</td><td>".$row['lname']."</td><td>".$row['email']."</td><td>".$row['phone']."</td><td>".$row['birthday']."</td></tr>";
 				}
 			}
 			echo "</tbody></table>";
@@ -69,7 +70,7 @@
 						echo "</div>";
 						echo "<div class=\"form-group\">";        
 							echo "<div class=\"col-sm-offset-2 col-sm-10\">";
-								echo "<button class=\"btn btn-primary\" type=\"submit\" name=\"submit\">Connect!</button>";
+								echo "<button class=\"btn btn-secondary\" type=\"submit\" name=\"submit\">Connect!</button>";
 							echo "</div>";
 						echo "</div>";
 					echo "</form>";
